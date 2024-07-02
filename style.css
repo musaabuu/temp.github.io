@@ -1,0 +1,123 @@
+
+
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-background: hsl(233, 47%, 7%);
+    --card-background: hsl(244, 38%, 16%);
+    --accent: hsl(277, 64%, 61%);
+    --main-paragraph: hsla(0, 0%, 100%, 0.75);
+    --stats-heading: hsla(0, 0%, 100%, 0.6);
+}
+
+body {
+    font-family: 'Inter';
+    background-color: var(--main-background);
+    color: white;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--card-background);
+    display: flex;
+    width: 90%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+@media (max-width: 767.98px) {
+    .container {
+        width: 50%;
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .left-side {
+        display: flex;
+        flex-direction: column;;
+    }
+
+    .left-side h1 {
+        font-size: 1.7rem;
+    }
+
+    .left-side > p {
+        font-size: 0.87rem;
+        line-height: 25px
+    }
+    
+    .stats p {
+        font-size: 0.7rem;
+        color: var(--stats-heading);
+    }
+}
+
+.left-side, .right-side {
+    width: 100%;
+}
+
+.left-side {
+    padding: 20px;
+}
+
+.left-side h1 {
+    scale: 0.9;
+    margin: 15px;
+}
+
+.left-side > p {
+    color: var(--main-paragraph);
+    scale: 0.9;
+    margin: 20px;
+}
+
+.stats {
+    display: grid;
+    text-align: center;
+    margin: 50px;
+}
+
+.stats .companies {
+    grid-column: 1;
+}
+
+.stats .templates {
+    grid-column: 2;
+}
+
+.stats .queries {
+    grid-column: 3;
+}
+
+.right-side {
+    position: relative;
+}
+
+.right-side img {
+    width: 100%;
+    height: 100%;
+}
+
+.right-side::before {
+    content: '';
+    position: absolute;
+    background-color: hsl(277, 64%, 61%);
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+}
+
+.attribution { 
+    font-size: 11px; text-align: center;
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
